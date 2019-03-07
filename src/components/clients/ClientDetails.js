@@ -164,7 +164,7 @@ ClientDetails.propTypes = {
 export default compose(
   // we want to select a single client
   firestoreConnect(props => [
-    { collection: "clients", storeAs: "client", doc: props.match.params.id } // specifying the document we want to grab
+    { collection: "clients", storeAs: "client", doc: props.match.params.id } // specifying the document (client) we want to grab
   ]),
   connect(({ firestore: { ordered } }, props) => ({
     client: ordered.client && ordered.client[0]
